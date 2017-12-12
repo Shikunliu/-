@@ -33,9 +33,9 @@ VAR_T g_tVar;
 */
 void MODS_Poll(void)
 {
-	uint8_t wrong_message_report[4]={0xF9, 0xF1, 0x06, 0x01};			//校验错误反馈,或者位数不对，请求重发
-	uint8_t wrong_message_report_bit_number[4]={0xF9, 0xF1, 0x06, 0x02};	 //位数错误
-	uint8_t wrong_message_report_head[4]={0xF9, 0xF1, 0x06, 0x03};			 //报头错误
+	uint8_t wrong_message_report[4]={0xF9, 0xF1, 0x05, 0x01};			//校验错误反馈,或者位数不对，请求重发
+	uint8_t wrong_message_report_bit_number[4]={0xF9, 0xF1, 0x05, 0x02};	 //位数错误
+	uint8_t wrong_message_report_head[4]={0xF9, 0xF1, 0x05, 0x03};			 //报头错误
 	//uint16_t addr;
 	uint16_t crc1;
 	// 超过3.5个字符时间后执行MODH_RxTimeOut()函数。全局变量 g_rtu_timeout = 1; 通知主程序开始解码 
@@ -59,15 +59,6 @@ void MODS_Poll(void)
 		g_tModS.RxCount = 0;
 		return;	
 	}
-	
-	/*
-	// 站地址 (1字节） 
-	addr = g_tModS.RxBuf[0];				// 第1字节 站号
-	if (addr != UART2_BAUD)		 			// 判断主机发送的命令地址是否符合
-	{
-		goto err_ret;
-	}
-	 */
 
 	crc1 = sum_check(g_tModS.RxBuf, g_tModS.RxCount-1);	  	// 计算校验和, 去掉校验位
 	//printf("%02X",crc1);	  
@@ -163,8 +154,10 @@ void MODS_RxTimeOut(void)
 */
 static void MODS_AnalyzeApp(void)
 {
-	uint8_t txbuf[4] = {0xF9, 0xF1, 0x06, 0x00};		//反馈工作正常
+	uint8_t txbuf[4] = {0xF9, 0xF1, 0x05, 0x00};		//反馈工作正常
+	uint8_t txbuf_limit_switch_error[4] = {0xF9, 0xF1, 0x05, 0x04};		//反馈机械手未到位，到位开关未开启
 	uint32_t counter = 0;
+	uint8_t indicator = 0;
 	limit_switch_flag_1 = 0;
 	limit_switch_flag_2 = 0;
 	
@@ -172,52 +165,182 @@ static void MODS_AnalyzeApp(void)
 	{
 		counter = (g_tModS.RxBuf[4]/10)*2000;  //假设出酒口一秒出10ml（次数每个出酒口不同），g_tModS.RxBuf[4]中存着需要的ml数，设为50ml。50/10=5sec，5sec * 2000为填入timer的值
 	
-		while(limit_switch_flag_1!=1)
+		if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0)==1)	
 		{
-			 LED1(0);
+			TIMER_Configuration(counter);//  测试额外timer
+			TIM_Cmd(TIM4, ENABLE);
 		}
-		limit_switch_flag_1 = 0;
-
-		TIMER_Configuration(counter);//  测试额外timer
-		TIM_Cmd(TIM4, ENABLE);
-
+		else 
+		{
+			 MODS_SendWithCRC(txbuf_limit_switch_error, 4);
+			 return;
+		}
 		while(timer_flag!=2)
 		{
-			 Delay();
-			 RELAY2(1);
-			 LED1(1); 
+			if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0)==1)
+			{ 
+			 	Delay();
+			 	RELAY2(1);
+			 	LED1(1); 
+			}
+			else
+			{
+				RELAY2(0);
+			 	LED1(0); 
+				indicator = 1;
+				//timer_flag = 0;			
+			 	//return;
+			}
 		}
-		LED3(0);//
 		timer_flag = 0;
 		RELAY2(0);
 		LED1(0); 
-		MODS_SendWithCRC(txbuf, 4);
+		if (indicator != 1)	    //indicator指示了中途机械手有没有离开
+		{
+			MODS_SendWithCRC(txbuf, 4);
+		}
+		else
+		{
+			MODS_SendWithCRC(txbuf_limit_switch_error, 4);
+		}
 	}
-
-	if(g_tModS.RxBuf[3]==0x02)
+//-----------------------------------------------------------------------------------------
+	
+   	if(g_tModS.RxBuf[3]==0x02)
 	{
 		counter = (g_tModS.RxBuf[4]/10)*2000;  //假设出酒口一秒出10ml（次数每个出酒口不同），g_tModS.RxBuf[4]中存着需要的ml数，设为50ml。50/10=5sec，5sec * 2000为填入timer的值
 	
-		while(limit_switch_flag_2!=1)
+		if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==1)	
 		{
-			 LED2(0);
+			TIMER_Configuration(counter);//  测试额外timer
+			TIM_Cmd(TIM4, ENABLE);
 		}
-		limit_switch_flag_2 = 0;
-
-		TIMER_Configuration(counter);//  测试额外timer
-		TIM_Cmd(TIM4, ENABLE);
-		
+		else 
+		{
+			 MODS_SendWithCRC(txbuf_limit_switch_error, 4);
+			 return;
+		}
 		while(timer_flag!=2)
 		{
-			 Delay();
-			 RELAY2(1);
-			 LED2(1); 
+			if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==1)
+			{ 
+			 	Delay();
+			 	RELAY2(1);
+			 	LED2(1); 
+			}
+			else
+			{
+				RELAY2(0);
+			 	LED2(0); 
+				indicator = 1;
+				//timer_flag = 0;			
+			 	//return;
+			}
 		}
-		LED4(0);//
+
 		timer_flag = 0;
 		RELAY2(0);
 		LED2(0); 
-		MODS_SendWithCRC(txbuf, 4);
+		if (indicator != 1)	    //indicator指示了中途机械手有没有离开
+		{
+			MODS_SendWithCRC(txbuf, 4);
+		}
+		else
+		{
+			MODS_SendWithCRC(txbuf_limit_switch_error, 4);
+		}
+
+	}
+	
+//-----------------------------------------------------------------------------------------
+	if(g_tModS.RxBuf[3]==0x03)
+	{
+		counter = (g_tModS.RxBuf[4]/10)*2000;  //假设出酒口一秒出10ml（次数每个出酒口不同），g_tModS.RxBuf[4]中存着需要的ml数，设为50ml。50/10=5sec，5sec * 2000为填入timer的值
+	
+		if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_2)==1)	
+		{
+			TIMER_Configuration(counter);//  测试额外timer
+			TIM_Cmd(TIM4, ENABLE);
+		}
+		else 
+		{
+			 MODS_SendWithCRC(txbuf_limit_switch_error, 4);
+			 return;
+		}
+		while(timer_flag!=2)
+		{
+			if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_2)==1)
+			{ 
+			 	Delay();
+			 	RELAY2(1);
+			 	LED3(1); 
+			}
+			else
+			{
+				RELAY2(0);
+			 	LED3(0); 
+				indicator = 1;
+				//timer_flag = 0;			
+			 	//return;
+			}
+		}
+	
+		timer_flag = 0;
+		RELAY2(0);
+		LED3(0); 
+		if (indicator != 1)	    //indicator指示了中途机械手有没有离开
+		{
+			MODS_SendWithCRC(txbuf, 4);
+		}
+		else
+		{
+			MODS_SendWithCRC(txbuf_limit_switch_error, 4);
+		}
+	}
+	//------------------------------------------------------------------------------
+		if(g_tModS.RxBuf[3]==0x04)
+	{
+		counter = (g_tModS.RxBuf[4]/10)*2000;  //假设出酒口一秒出10ml（次数每个出酒口不同），g_tModS.RxBuf[4]中存着需要的ml数，设为50ml。50/10=5sec，5sec * 2000为填入timer的值
+	
+		if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_3)==1)	
+		{
+			TIMER_Configuration(counter);//  测试额外timer
+			TIM_Cmd(TIM4, ENABLE);
+		}
+		else 
+		{
+			 MODS_SendWithCRC(txbuf_limit_switch_error, 4);
+			 return;
+		}
+		while(timer_flag!=2)
+		{
+			if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_3)==1)
+			{ 
+			 	Delay();
+			 	RELAY2(1);
+			 	LED4(1); 
+			}
+			else
+			{
+				RELAY2(0);
+			 	LED4(0); 
+				indicator = 1;
+				//timer_flag = 0;			
+			 	//return;
+			}
+		}
+
+		timer_flag = 0;
+		RELAY2(0);
+		LED4(0); 
+		if (indicator != 1)	    //indicator指示了中途机械手有没有离开
+		{
+			MODS_SendWithCRC(txbuf, 4);
+		}
+		else
+		{
+			MODS_SendWithCRC(txbuf_limit_switch_error, 4);
+		}
 	}
 		
 }
