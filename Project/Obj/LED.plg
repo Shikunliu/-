@@ -120,3 +120,381 @@ linking...
 Program Size: Code=4940 RO-data=368 RW-data=76 ZI-data=5412  
 FromELF: creating hex file...
 ".\Obj\LED.axf" - 0 Error(s), 0 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+linking...
+Program Size: Code=5032 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 0 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+linking...
+Program Size: Code=5032 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 0 Warning(s).
+Build target 'LED'
+linking...
+Program Size: Code=5032 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 0 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+compiling bsp_level_sensor_input.c...
+linking...
+Program Size: Code=5160 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 0 Warning(s).
+Build target 'LED'
+linking...
+Program Size: Code=5160 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 0 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+linking...
+Program Size: Code=5160 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 0 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+linking...
+Program Size: Code=5160 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 0 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+linking...
+Program Size: Code=5160 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 0 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+..\User\Main\modbus_slave.c(404): error:  #20: identifier "_usLen" is undefined
+..\User\Main\modbus_slave.c:             while (_usLen--)
+..\User\Main\modbus_slave.c:                    ^
+..\User\Main\modbus_slave.c(406): error:  #20: identifier "sum_check_output" is undefined
+..\User\Main\modbus_slave.c:                    sum_check_output = (sum_check_output + _pBuf[_usLen]) % 256;
+..\User\Main\modbus_slave.c:                    ^
+..\User\Main\modbus_slave.c(406): error:  #20: identifier "_pBuf" is undefined
+..\User\Main\modbus_slave.c:                    sum_check_output = (sum_check_output + _pBuf[_usLen]) % 256;
+..\User\Main\modbus_slave.c:                                                           ^
+..\User\Main\modbus_slave.c(360): warning:  #177-D: variable "txbuf_1" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c: ..\User\Main\modbus_slave.c: 1 warning, 3 errors
+Target not created
+Build target 'LED'
+compiling modbus_slave.c...
+..\User\Main\modbus_slave.c(360): warning:  #177-D: variable "txbuf_1" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c: ..\User\Main\modbus_slave.c: 1 warning, 0 errors
+linking...
+Program Size: Code=5072 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 1 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+..\User\Main\modbus_slave.c(360): warning:  #177-D: variable "txbuf_1" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c(362): warning:  #177-D: variable "position_indicator" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t position_indicator = 0;
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c: ..\User\Main\modbus_slave.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=5072 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 2 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+..\User\Main\modbus_slave.c(420): warning:  #47-D: incompatible redefinition of macro "check_pin" (declared at line 415)
+..\User\Main\modbus_slave.c:                            #define check_pin       GPIO_Pin_1
+..\User\Main\modbus_slave.c:                                    ^
+..\User\Main\modbus_slave.c(425): warning:  #47-D: incompatible redefinition of macro "check_pin" (declared at line 420)
+..\User\Main\modbus_slave.c:                            #define check_pin       GPIO_Pin_2
+..\User\Main\modbus_slave.c:                                    ^
+..\User\Main\modbus_slave.c(430): warning:  #47-D: incompatible redefinition of macro "check_pin" (declared at line 425)
+..\User\Main\modbus_slave.c:                            #define check_pin       GPIO_Pin_3
+..\User\Main\modbus_slave.c:                                    ^
+..\User\Main\modbus_slave.c(435): warning:  #47-D: incompatible redefinition of macro "check_pin" (declared at line 430)
+..\User\Main\modbus_slave.c:                            #define check_pin       GPIO_Pin_4
+..\User\Main\modbus_slave.c:                                    ^
+..\User\Main\modbus_slave.c(440): warning:  #47-D: incompatible redefinition of macro "check_pin" (declared at line 435)
+..\User\Main\modbus_slave.c:                            #define check_pin       GPIO_Pin_5
+..\User\Main\modbus_slave.c:                                    ^
+..\User\Main\modbus_slave.c(445): warning:  #47-D: incompatible redefinition of macro "check_pin" (declared at line 440)
+..\User\Main\modbus_slave.c:                            #define check_pin       GPIO_Pin_6
+..\User\Main\modbus_slave.c:                                    ^
+..\User\Main\modbus_slave.c(447): error:  #24: invalid octal digit
+..\User\Main\modbus_slave.c:                    if(g_tModS.RxBuf[input_buf_pointer]==08)
+..\User\Main\modbus_slave.c:                                                          ^
+..\User\Main\modbus_slave.c(450): warning:  #47-D: incompatible redefinition of macro "check_pin" (declared at line 445)
+..\User\Main\modbus_slave.c:                            #define check_pin       GPIO_Pin_7
+..\User\Main\modbus_slave.c:                                    ^
+..\User\Main\modbus_slave.c(360): warning:  #177-D: variable "txbuf_1" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c(362): warning:  #177-D: variable "position_indicator" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t position_indicator = 0;
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c: ..\User\Main\modbus_slave.c: 9 warnings, 1 error
+Target not created
+Build target 'LED'
+compiling modbus_slave.c...
+..\User\Main\modbus_slave.c(414): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "uint8_t"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(419): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "uint8_t"
+..\User\Main\modbus_slave.c:                              check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                         ^
+..\User\Main\modbus_slave.c(424): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "uint8_t"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(429): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "uint8_t"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(434): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "uint8_t"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(439): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "uint8_t"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(444): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "uint8_t"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(447): error:  #24: invalid octal digit
+..\User\Main\modbus_slave.c:                    if(g_tModS.RxBuf[input_buf_pointer]==08)
+..\User\Main\modbus_slave.c:                                                          ^
+..\User\Main\modbus_slave.c(449): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "uint8_t"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(453): error:  #167: argument of type "uint8_t" is incompatible with parameter of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                    if(GPIO_ReadInputDataBit(check_port, check_pin)==1)     
+..\User\Main\modbus_slave.c:                                             ^
+..\User\Main\modbus_slave.c(360): warning:  #177-D: variable "txbuf_1" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c(362): warning:  #177-D: variable "position_indicator" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t position_indicator = 0;
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c: ..\User\Main\modbus_slave.c: 2 warnings, 10 errors
+Target not created
+Build target 'LED'
+compiling modbus_slave.c...
+..\User\Main\modbus_slave.c(363): error:  #144: a value of type "int" cannot be used to initialize an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:     GPIO_TypeDef check_port = 0;
+..\User\Main\modbus_slave.c:                               ^
+..\User\Main\modbus_slave.c(364): error:  #144: a value of type "int" cannot be used to initialize an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:     GPIO_TypeDef check_pin = 0;
+..\User\Main\modbus_slave.c:                              ^
+..\User\Main\modbus_slave.c(414): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(415): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_0;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(419): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                              check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                         ^
+..\User\Main\modbus_slave.c(420): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_1;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(424): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(425): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_2;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(429): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(430): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_3;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(434): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(435): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_4;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(439): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(440): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_5;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(444): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(445): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_6;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(447): error:  #24: invalid octal digit
+..\User\Main\modbus_slave.c:                    if(g_tModS.RxBuf[input_buf_pointer]==08)
+..\User\Main\modbus_slave.c:                                                          ^
+..\User\Main\modbus_slave.c(449): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(450): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_7;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(453): error:  #167: argument of type "GPIO_TypeDef" is incompatible with parameter of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                    if(GPIO_ReadInputDataBit(check_port, check_pin)==1)     
+..\User\Main\modbus_slave.c:                                             ^
+..\User\Main\modbus_slave.c(453): error:  #167: argument of type "GPIO_TypeDef" is incompatible with parameter of type "uint16_t"
+..\User\Main\modbus_slave.c:                    if(GPIO_ReadInputDataBit(check_port, check_pin)==1)     
+..\User\Main\modbus_slave.c:                                                         ^
+..\User\Main\modbus_slave.c(360): warning:  #177-D: variable "txbuf_1" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c(362): warning:  #177-D: variable "position_indicator" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t position_indicator = 0;
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c: ..\User\Main\modbus_slave.c: 2 warnings, 21 errors
+Target not created
+Build target 'LED'
+compiling modbus_slave.c...
+..\User\Main\modbus_slave.c(414): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(415): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_0;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(419): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                              check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                         ^
+..\User\Main\modbus_slave.c(420): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_1;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(424): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(425): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_2;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(429): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(430): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_3;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(434): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(435): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_4;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(439): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(440): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_5;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(444): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(445): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_6;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(447): error:  #24: invalid octal digit
+..\User\Main\modbus_slave.c:                    if(g_tModS.RxBuf[input_buf_pointer]==08)
+..\User\Main\modbus_slave.c:                                                          ^
+..\User\Main\modbus_slave.c(449): error:  #513: a value of type "GPIO_TypeDef *" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_port = GPIOA;
+..\User\Main\modbus_slave.c:                                        ^
+..\User\Main\modbus_slave.c(450): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_7;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(453): error:  #167: argument of type "GPIO_TypeDef" is incompatible with parameter of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                    if(GPIO_ReadInputDataBit(check_port, check_pin)==1)     
+..\User\Main\modbus_slave.c:                                             ^
+..\User\Main\modbus_slave.c(453): error:  #167: argument of type "GPIO_TypeDef" is incompatible with parameter of type "uint16_t"
+..\User\Main\modbus_slave.c:                    if(GPIO_ReadInputDataBit(check_port, check_pin)==1)     
+..\User\Main\modbus_slave.c:                                                         ^
+..\User\Main\modbus_slave.c(360): warning:  #177-D: variable "txbuf_1" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c(362): warning:  #177-D: variable "position_indicator" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t position_indicator = 0;
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c: ..\User\Main\modbus_slave.c: 2 warnings, 19 errors
+Target not created
+Build target 'LED'
+compiling modbus_slave.c...
+..\User\Main\modbus_slave.c(415): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_0;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(420): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_1;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(425): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_2;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(430): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_3;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(435): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_4;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(440): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_5;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(445): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_6;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(447): error:  #24: invalid octal digit
+..\User\Main\modbus_slave.c:                    if(g_tModS.RxBuf[input_buf_pointer]==08)
+..\User\Main\modbus_slave.c:                                                          ^
+..\User\Main\modbus_slave.c(450): error:  #513: a value of type "uint16_t" cannot be assigned to an entity of type "GPIO_TypeDef *"
+..\User\Main\modbus_slave.c:                             check_pin = GPIO_Pin_7;
+..\User\Main\modbus_slave.c:                                       ^
+..\User\Main\modbus_slave.c(453): error:  #167: argument of type "GPIO_TypeDef *" is incompatible with parameter of type "uint16_t"
+..\User\Main\modbus_slave.c:                    if(GPIO_ReadInputDataBit(check_port, check_pin)==1)     
+..\User\Main\modbus_slave.c:                                                         ^
+..\User\Main\modbus_slave.c(360): warning:  #177-D: variable "txbuf_1" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c(362): warning:  #177-D: variable "position_indicator" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t position_indicator = 0;
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c: ..\User\Main\modbus_slave.c: 2 warnings, 10 errors
+Target not created
+Build target 'LED'
+compiling modbus_slave.c...
+..\User\Main\modbus_slave.c(360): warning:  #177-D: variable "txbuf_1" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c(361): warning:  #177-D: variable "input_buf_pointer" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t input_buf_pointer = 0;
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c(362): warning:  #177-D: variable "position_indicator" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t position_indicator = 0;
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c(363): warning:  #177-D: variable "check_port" was declared but never referenced
+..\User\Main\modbus_slave.c:     GPIO_TypeDef* check_port ;
+..\User\Main\modbus_slave.c:                   ^
+..\User\Main\modbus_slave.c(364): warning:  #177-D: variable "check_pin" was declared but never referenced
+..\User\Main\modbus_slave.c:     GPIO_TypeDef* check_pin ;
+..\User\Main\modbus_slave.c:                   ^
+..\User\Main\modbus_slave.c: ..\User\Main\modbus_slave.c: 5 warnings, 0 errors
+linking...
+Program Size: Code=5084 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 5 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+..\User\Main\modbus_slave.c(360): warning:  #177-D: variable "txbuf_1" was declared but never referenced
+..\User\Main\modbus_slave.c:     uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+..\User\Main\modbus_slave.c:             ^
+..\User\Main\modbus_slave.c: ..\User\Main\modbus_slave.c: 1 warning, 0 errors
+linking...
+Program Size: Code=5084 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 1 Warning(s).
+Build target 'LED'
+compiling modbus_slave.c...
+linking...
+Program Size: Code=5084 RO-data=368 RW-data=76 ZI-data=5412  
+FromELF: creating hex file...
+".\Obj\LED.axf" - 0 Error(s), 0 Warning(s).

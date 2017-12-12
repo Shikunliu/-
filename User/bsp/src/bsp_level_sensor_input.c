@@ -22,6 +22,12 @@ void LEVEL_SENSOR_INPUT_Configuration(void)
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;
 	GPIO_Init(GPIOC, &GPIO_InitStructure);
 
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO,ENABLE);
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;  
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
 	//GPIO_EXTILineConfig(GPIO_PortSourceGPIOD , GPIO_PinSource11);	  //将按键所使用的端口配置为外部中断输入引脚 （port, pin）
 	//GPIO_EXTILineConfig(GPIO_PortSourceGPIOD , GPIO_PinSource12);
 }

@@ -356,39 +356,89 @@ static void MODS_AnalyzeApp(void)
 */
 static void MODS_AnalyzeApp_F2(void)	 
 {
-	 uint8_t txbuf_0[9] = {0xF9, 0xF2, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-	 uint8_t txbuf_1[9] = {0xF9, 0xF2, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01};
+	 uint8_t txbuf_0[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+	 //uint8_t txbuf_1[8] = {0xF9, 0xF2, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+
+	 //uint8_t counter = 0;
 	 //uint8_t txbuf_2[4] = {0xF9, 0xF2, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02};
 	 //F9	F2	0D	XX	XX	XX	XX	XX	XX
 	 
-	 if(g_tModS.RxBuf[3]==0x00)
+	 if(g_tModS.RxBuf[3]==0x00)				//查询所有
 	{
-		   if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==0)
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0)==1)
 		   {
-		  	 MODS_SendWithCRC(txbuf_0, 9);
+		  	  txbuf_0[7] = txbuf_0[7]+1;
 		   }
-		   else if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==1)	
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1)==1)	
 		   {
-		   	 MODS_SendWithCRC(txbuf_1, 9);
-		   }	   
+		   	  txbuf_0[7] = txbuf_0[7]+2;
+		   }
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_2)==1)
+		   {
+		  	  txbuf_0[7] = txbuf_0[7]+4;
+		   }
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_3)==1)	
+		   {
+		   	  txbuf_0[7] = txbuf_0[7]+8;
+		   }
+
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_4)==1)
+		   {
+		  	  txbuf_0[7] = txbuf_0[7]+16;
+		   }
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_5)==1)	
+		   {
+		   	  txbuf_0[7] = txbuf_0[7]+32;
+		   }
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_6)==1)
+		   {
+		  	  txbuf_0[7] = txbuf_0[7]+64;
+		   }
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_7)==1)	
+		   {
+		   	  txbuf_0[7] = txbuf_0[7]+128;
+		   }
+		   
+		   MODS_SendWithCRC(txbuf_0, 8);		   
 	}
-	else if(g_tModS.RxBuf[3]==0x01)
+	else if(g_tModS.RxBuf[3]==0x01)			  //查询多个
 	{
-		if(g_tModS.RxBuf[8]==0x01)
-		{
-			if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==0)
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0)==1)
 		   {
-		  	 MODS_SendWithCRC(txbuf_0, 9);
+		  	  txbuf_0[7] = txbuf_0[7]+1;
 		   }
-		   else if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==1)	
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1)==1)	
 		   {
-		   	 MODS_SendWithCRC(txbuf_1, 9);
+		   	  txbuf_0[7] = txbuf_0[7]+2;
 		   }
-		}
-		else
-		{
-			MODS_SendWithCRC(txbuf_0, 9);
-		} 
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_2)==1)
+		   {
+		  	  txbuf_0[7] = txbuf_0[7]+4;
+		   }
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_3)==1)	
+		   {
+		   	  txbuf_0[7] = txbuf_0[7]+8;
+		   }
+
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_4)==1)
+		   {
+		  	  txbuf_0[7] = txbuf_0[7]+16;
+		   }
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_5)==1)	
+		   {
+		   	  txbuf_0[7] = txbuf_0[7]+32;
+		   }
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_6)==1)
+		   {
+		  	  txbuf_0[7] = txbuf_0[7]+64;
+		   }
+		   if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_7)==1)	
+		   {
+		   	  txbuf_0[7] = txbuf_0[7]+128;
+		   }
+		   
+		   MODS_SendWithCRC(txbuf_0, 8);
+		
 	}
 }
 
