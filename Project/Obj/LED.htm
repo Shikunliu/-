@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Obj\LED.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Obj\LED.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 4.1 [Build 481]: Last Updated: Mon Dec 11 10:26:30 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 4.1 [Build 481]: Last Updated: Tue Dec 12 10:49:57 2017
 <BR><P>
 <H3>Maximum Stack Usage =        240 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -435,7 +435,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_Init
 </UL>
 
-<P><STRONG><a name="[6c]"></a>MODS_Poll</STRONG> (Thumb, 114 bytes, Stack size 24 bytes, modbus_slave.o(i.MODS_Poll))
+<P><STRONG><a name="[6c]"></a>MODS_Poll</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, modbus_slave.o(i.MODS_Poll))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = MODS_Poll &rArr; MODS_AnalyzeApp &rArr; MODS_SendWithCRC &rArr; RS485_SendBuf &rArr; comSendBuf &rArr; USART_ITConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sum_check
@@ -780,7 +780,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry7.o(.ARM.Collect$$$$00000007)
 </UL>
-<P><STRONG><a name="[6d]"></a>sum_check</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, bsp_user_lib.o(i.sum_check))
+<P><STRONG><a name="[6d]"></a>sum_check</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, bsp_user_lib.o(i.sum_check))
 <BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MODS_SendWithCRC
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MODS_Poll
 </UL>

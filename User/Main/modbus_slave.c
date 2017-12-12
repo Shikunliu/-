@@ -69,7 +69,7 @@ void MODS_Poll(void)
 	}
 	 */
 
-	crc1 = sum_check(g_tModS.RxBuf, g_tModS.RxCount);	  	// 计算校验和
+	crc1 = sum_check(g_tModS.RxBuf, g_tModS.RxCount-1);	  	// 计算校验和, 去掉校验位
 	//printf("%02X",crc1);	  
 	if (crc1 != g_tModS.RxBuf[g_tModS.RxCount-1])
 	{

@@ -105,7 +105,7 @@ uint16_t CRC16_Modbus(uint8_t *_pBuf, uint16_t _usLen)
 uint16_t sum_check(uint8_t *_pBuf, uint16_t _usLen)
 {
 	uint8_t sum_check_output = 0x00;
-	_usLen--;
+	//_usLen--;
 	while (_usLen--)
     {
 		sum_check_output = (sum_check_output + _pBuf[_usLen]) % 256;
